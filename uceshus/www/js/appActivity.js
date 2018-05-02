@@ -19,7 +19,6 @@ var testMarkerPink = L.AwesomeMarkers.icon({
 // this is the code that runs when the App starts
 
 	loadMap();
-	trackLocation();
 	//showPointLineCircle();
 	
 		
@@ -51,6 +50,28 @@ function loadMap(){
 		}).addTo(mymap);
 
 }
+
+var geojsonFeature = {
+		"type": "Feature",
+		"properties": {
+			"name": "London: ",
+			"popupContent": "This is where UCL is based."
+		},
+		"geometry":{
+			"type":"Point",
+			"coordinates":[-0.118092, 51.509865]
+		}
+	};
+	
+	//and add it to the map
+	L.geoJSON(geojsonFeature, {
+		pointToLayer: function (feature, latlng) {
+			return L.marker(latlng, {icon:testMarkerPink});
+		}
+	}).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+""+geojsonFeature.properties.popupContent+"<b>");
+    
+// create a custom popup	
+var popup = L.popup();
 
 // create an event detector to wait for the user's click event and then use the popup to show them where they clicked
 // note that you don't need to do any complicated maths to convert screen coordinates to real world coordiantes - the Leaflet API does this for you
