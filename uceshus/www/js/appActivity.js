@@ -27,6 +27,7 @@ var testMarkerPink = L.AwesomeMarkers.icon({
 // the functions
 
 function trackLocation() {
+	alert("Tracking");
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
     } else {
