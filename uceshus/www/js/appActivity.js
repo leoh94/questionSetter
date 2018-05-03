@@ -49,28 +49,7 @@ function loadMap(){
 				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			id: 'mapbox.streets'
 		}).addTo(mymap);
-
 }
-
-var geojsonFeature = {
-		"type": "Feature",
-		"properties": {
-			"name": "London: ",
-			"popupContent": "This is where UCL is based."
-		},
-		"geometry":{
-			"type":"Point",
-			"coordinates":[-0.118092, 51.509865]
-		}
-	};
-	
-	//and add it to the map
-	L.geoJSON(geojsonFeature, {
-		pointToLayer: function (feature, latlng) {
-			return L.marker(latlng, {icon:testMarkerPink});
-		}
-	}).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+""+geojsonFeature.properties.popupContent+"<b>");
-    
 // create a custom popup	
 var popup = L.popup();
 
@@ -112,7 +91,7 @@ function getEarthquakes() {
    // set up the request
    client = new XMLHttpRequest();
    // make the request to the URL
-   client.open('GET','https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');
+   client.open('GET','http://developer.cege.ucl.ac.uk:30263/getGeoJSON/formdata/geom');
    // tell the request what method to run that will listen for the response
    client.onreadystatechange = earthquakeResponse;  // note don't use earthquakeResponse() with brackets as that doesn't work
    // activate the request
