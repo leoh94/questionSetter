@@ -4,12 +4,13 @@ function startDataUpload() {
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
 	var module = document.getElementById("module").value;
+	alert(name + " "+ surname + " "+module);
 	var question = document.getElementByID("question").value;
 	var answer1 = document.getElementByID("answer1").value;
 	var answer2 = document.getElementByID("answer2").value;
 	var answer3 = document.getElementByID("answer3").value;
 	var answer4 = document.getElementByID("answer4").value;
-	alert(name + " "+ surname + " "+module);
+	
 	
 	var postString = "name="+name +"&surname="+surname+"&module="+module+"&question="+question+"&answer1="+answer1+"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4;
 	// now get the geometry values
