@@ -4,10 +4,10 @@ function startDataUpload() {
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
 	var module = document.getElementById("module").value;
-
+	var question = document.getElementByID("question").value
 	alert(name + " "+ surname + " "+module);
 	
-	var postString = "name="+name +"&surname="+surname+"&module="+module;
+	var postString = "name="+name +"&surname="+surname+"&module="+module+"&question="+question;
 	
 	// now get the checkbox values - separate them with a | so that they can be 
 	// split later on if necessary
@@ -18,12 +18,11 @@ function startDataUpload() {
 		}
 
 	}
+		postString = postString + "&answerlist="+checkString;
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
 	var longitude = document.getElementById("longitude").value;
 	postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
-
-	postString = postString + "&answerlist="+checkString;
 	
 	processData(postString);
 
