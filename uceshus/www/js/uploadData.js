@@ -4,28 +4,20 @@ function startDataUpload() {
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
 	var module = document.getElementById("module").value;
-	var question = document.getElementByID("question").value
-	alert(name + " "+ surname + " "+module + " "+question);
+	var question = document.getElementByID("question").value;
+	var answer1 = document.getElementByID("answer1").value;
+	var answer2 = document.getElementByID("answer2").value;
+	var answer3 = document.getElementByID("answer3").value;
+	var answer4 = document.getElementByID("answer4").value;
+	alert(name + " "+ surname + " "+module);
 	
-	var postString = "name="+name +"&surname="+surname+"&module="+module+"&question="+question;
-	
-	// now get the checkbox values - separate them with a | so that they can be 
-	// split later on if necessary
-	var checkString = "";
-	for (var i = 1;i< 5;i++){
-		if (document.getElementById("answer"+i).checked === true) {
-			checkString = checkString + document.getElementById("answer"+i).value + "||"
-		}
-
-	}
-	postString = postString + "&answerlist="+checkString;
+	var postString = "name="+name +"&surname="+surname+"&module="+module+"&question="+question+"&answer1="+answer1+"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4;
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
 	var longitude = document.getElementById("longitude").value;
 	postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 	
 	processData(postString);
-
 }
 
 var client;

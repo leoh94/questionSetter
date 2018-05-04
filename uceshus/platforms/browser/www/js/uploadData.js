@@ -5,7 +5,7 @@ function startDataUpload() {
 	var surname = document.getElementById("surname").value;
 	var module = document.getElementById("module").value;
 	var question = document.getElementByID("question").value
-	alert(name + " "+ surname + " "+module);
+	alert(name + " "+ surname + " "+module + " "+question);
 	
 	var postString = "name="+name +"&surname="+surname+"&module="+module+"&question="+question;
 	
@@ -13,12 +13,12 @@ function startDataUpload() {
 	// split later on if necessary
 	var checkString = "";
 	for (var i = 1;i< 5;i++){
-		if (document.getElementById("check"+i).checked === true) {
-			checkString = checkString + document.getElementById("check"+i).value + "||"
+		if (document.getElementById("answer"+i).checked === true) {
+			checkString = checkString + document.getElementById("answer"+i).value + "||"
 		}
 
 	}
-		postString = postString + "&answerlist="+checkString;
+	postString = postString + "&answerlist="+checkString;
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
 	var longitude = document.getElementById("longitude").value;
