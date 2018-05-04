@@ -18,7 +18,6 @@ function startDataUpload() {
 		}
 
 	}
-
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
 	var longitude = document.getElementById("longitude").value;
