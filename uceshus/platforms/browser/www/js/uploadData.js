@@ -16,14 +16,17 @@ function startDataUpload() {
 	var answer3 = document.getElementByID("answer3").value;
 	var answer4 = document.getElementByID("answer4").value;
 	
-	alert(answer1 + " "+answer2 + " "+answer3 + " "+answer4)
+	alert(answer1 + " "+ answer2 + " "+ answer3 + " "+answer4)
 	
 	var postString = "name="+name +"&surname="+surname+"&module="+module;
-	postString = postString + "&question="+question+"&answer1="+answer1+"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4;
+	
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
 	var longitude = document.getElementById("longitude").value;
 	postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
+	
+	postString = postString + "&question="+question+"&answer1="+answer1+"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4;
+
 	
 	processData(postString);
 }
