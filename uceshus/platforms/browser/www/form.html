@@ -124,35 +124,20 @@
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
-		<div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" > 
-		<div id="form" style="width: 1600px; height: 600px;>
-		<h1> Enter User Credentials </h1>
+	  <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"> 
+		<div id="form" style="width: 1600px; height: 600px;">
 		<label for="name">Name</label><input type="text" size="25" id="name"/><br />
 		<label for="surname">Surname</label><input type="text" size="25" id="surname"/><br/>
 		<label for="module">Module</label><input type="text" size="25" id="module"/><br />
-		<p>Would you like lectures in the morning or afternoon?</p>
-		Morning: <input type="radio" name="amorpm" id="morning" /><br />
-		Afternoon: <input type="radio" name="amorpm" id ="afternoon"/><br />
-		<p>Which modules are you taking?</p>
-		CEGEG077: <input type="checkbox" name="modules" id = check1 value="CEGEG077"checked="yes" /><br />
-		CEGEG129: <input type="checkbox" name="modules" id = check2 value="CEGEG129"/><br />
-		CEGEG082: <input type="checkbox" name="modules" id = check3 value="CEGEG082"/><br />
-		CEGEG034: <input type="checkbox" name="modules" id = check4 value="CEGEG034"/><br />
-		<p>What is your first language?</p>
-		<select name="languageselectbox" id="languageselectbox">
-		<option >English </option>
-		<option>Mandarin</option>
-		<option>Greek</option>
-		<option>Italian</option>
-		<option>Spanish</option>
-		<option>Other</option>
-		</select><br />
+		<label for="question">Question</label><input type="text" size="25" id="question"/><br />
+		<label for="answer1">Answer1</label><input type="text" size="25" id="answer1"/><br />
+		<label for="answer2">Answer2</label><input type="text" size="25" id="answer2"/><br />
+		<label for="answer3">Answer3</label><input type="text" size="25" id="answer3"/><br />
+		<label for="answer4">Answer4</label><input type="text" size="25" id="answer4"/><br />
 		<label for="latitude">Latitude</label><input type="text" size="25" id="latitude"/><br />
 		<label for="longitude">Longitude</label><input type="text" size="25" id="longitude"/><br />
 		<button id="startUpload" onclick="startDataUpload()">Start Data Upload</button><br />
 		<div id="dataUploadResult">The result of the upload goes here</div>
-
-
 		</div></div>
 		</main>
 	<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
