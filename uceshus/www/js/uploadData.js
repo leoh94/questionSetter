@@ -11,17 +11,18 @@ function startDataUpload() {
 	
 	var question = document.getElementByID("question").value;
 	var answer1 = document.getElementByID("answer1").value;
-	var answer2 = document.getElementByID("answer2").value;
-	var answer3 = document.getElementByID("answer3").value;
-	var answer4 = document.getElementByID("answer4").value;
+	
+	postString = postString + "&question="+question+"&answer1="+answer1;
 	
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
 	var longitude = document.getElementById("longitude").value;
 	postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 	
-	postString = postString + "&question="+question+"&answer1="+answer1+"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4;
-
+	var answer2 = document.getElementByID("answer2").value;
+	var answer3 = document.getElementByID("answer3").value;
+	var answer4 = document.getElementByID("answer4").value;
+	postString = postString +"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4;
 	
 	processData(postString);
 }

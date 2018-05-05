@@ -7,18 +7,13 @@ function startDataUpload() {
 	
 	alert(name + " "+ surname + " "+module);
 	
+	var postString = "name="+name +"&surname="+surname+"&module="+module;
+	
 	var question = document.getElementByID("question").value;
-	
-	alert(question);
-	
 	var answer1 = document.getElementByID("answer1").value;
 	var answer2 = document.getElementByID("answer2").value;
 	var answer3 = document.getElementByID("answer3").value;
 	var answer4 = document.getElementByID("answer4").value;
-	
-	alert(answer1 + " "+ answer2 + " "+ answer3 + " "+answer4)
-	
-	var postString = "name="+name +"&surname="+surname+"&module="+module;
 	
 	// now get the geometry values
 	var latitude = document.getElementById("latitude").value;
