@@ -117,16 +117,7 @@ function loadearthquakelayer(earthquakedata) {
             // use point to layer to create the points
             pointToLayer: function (feature, latlng)
             {
-              // look at the GeoJSON file - specifically at the properties - to see the earthquake magnitude and use a different marker depending on this value
-              // also include a pop-up that shows the place value of the earthquakes
-              if (feature.properties.mag > 1.75) {
-                 return L.marker(latlng, {icon:testMarkerRed}).bindPopup("<b>"+feature.properties.place +"</b>");
-              }
-              else {
-                // magnitude is 1.75 or less
-                return L.marker(latlng, {icon:testMarkerPink}).bindPopup("<b>"+feature.properties.place +"</b>");;
-              }
-            },
-        }).addTo(mymap); 
-    mymap.fitBounds(earthquakelayer.getBounds());
+				return L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap).bindPopup("<b>You were at "+ position.coords.longitude + " "+position.coords.latitude+"!</b>");
+			},	
+			mymap.fitBounds(earthquakelayer.getBounds());
 }
