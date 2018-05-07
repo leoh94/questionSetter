@@ -112,9 +112,8 @@
           <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
           <a class="mdl-navigation__link" href="" onclick='trackLocation();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">Info</i>Track Location</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
-          <a class="mdl-navigation__link" href="" onclick='getEarthquakes();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Get FormData</a>
-		  
-          <a class="mdl-navigation__link" href="form.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Form</a>
+          <a class="mdl-navigation__link" href="" onclick='getEarthquakes();return false;'><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Get Question Data</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>forum</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
@@ -130,14 +129,13 @@
 		<div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" > 
 		<div id="form" style="width: 1600px; height: 600px;">
 		<h1> Enter Quiz Questions </h1>
-		<label for="name">Name</label><input type="text" size="25" id="name"/><br />
-		<label for="surname">Surname</label><input type="text" size="25" id="surname"/><br/>
-		<label for="module">Module</label><input type="text" size="25" id="module"/><br />
+		<label for="site_location">Site Location</label><input type="text" size="25" id="site_location"/><br />
 		<label for="question">Question</label><input type="text" size="25" id="question"/><br />
 		<label for="answer1">Answer1</label><input type="text" size="25" id="answer1"/><br />
 		<label for="answer2">Answer2</label><input type="text" size="25" id="answer2"/><br />
 		<label for="answer3">Answer3</label><input type="text" size="25" id="answer3"/><br />
 		<label for="answer4">Answer4</label><input type="text" size="25" id="answer4"/><br />
+		<label for="correct">Correct Answer</label><input type="text" size="25" id="correct"/><br />
 		<label for="latitude">Latitude</label><input type="text" size="25" id="latitude"/><br />
 		<label for="longitude">Longitude</label><input type="text" size="25" id="longitude"/><br />
 		<button id="startUpload" onclick="startDataUpload()">Start Data Upload</button><br />

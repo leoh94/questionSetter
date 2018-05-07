@@ -97,7 +97,7 @@ function showPointLineCircle(){
    // create the code to get the Earthquakes data using an XMLHttpRequest
    function getEarthquakes() {
 	client = new XMLHttpRequest();
-	client.open('GET','http://developer.cege.ucl.ac.uk:30263/getGeoJSON/formdata/geom');
+	client.open('GET','http://developer.cege.ucl.ac.uk:30263/getData');
 	client.onreadystatechange = earthquakeResponse; // note don't use earthquakeResponse() with brackets as that doesn't work
 	client.send();
 	}
