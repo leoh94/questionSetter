@@ -6,22 +6,10 @@ var client;
 // store the map
 var mymap;
 
-var testMarkerRed = L.AwesomeMarkers.icon({
-	icon: 'play',
-	markerColor: 'red'
-});
-
-var testMarkerPink = L.AwesomeMarkers.icon({
-	icon: 'play',
-	markerColor: 'pink'
-});
 
 // this is the code that runs when the App starts
 
-	loadMap();
-	//showPointLineCircle();
-	
-		
+	loadMap();		
 		
 // ***********************************
 // the functions
@@ -62,60 +50,37 @@ function onMapClick(e) {
 	.openOn(mymap);
 	}
 	// now add the click event detector to the map
-	mymap.on('click', onMapClick);
-
-function showPointLineCircle(){
-	// add a point
-	L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-	// add a circle
-	L.circle([51.508, -0.11], 500, {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a circle.");
-	// add a polygon with 3 end points (i.e. a triangle)
-	var myPolygon = L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	],{
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("I am a polygon.");
-}
+	mymap.on('click', onMapClick);	
 		
-		
-	function loadEarthquakeData() {
-	// call the getEarthquakes code
-	// keep the alert message so that we know something is happening
-	alert("Loading Data Points");
-	getEarthquakes();
+	function loadData() {
+	// call the getData function
+	alert("Loading Question Points");
+	getQData();
 	}
-   // create a variable that will hold the XMLHttpRequest() - this must be done outside a function so that all the functions can use the same variable
+   // create a variable that will hold the XMLHttpRequest()
    var client;
-   // create the code to get the Earthquakes data using an XMLHttpRequest
-   function getEarthquakes() {
+   // create the code to get the data using an XMLHttpRequest
+   function getQData() {
 	client = new XMLHttpRequest();
 	client.open('GET','http://developer.cege.ucl.ac.uk:30263/getData');
-	client.onreadystatechange = earthquakeResponse; // note don't use earthquakeResponse() with brackets as that doesn't work
+	client.onreadystatechange = DataResponse;
 	client.send();
 	}
    // create the code to wait for the response from the data server, and process the response once it is received
-   function earthquakeResponse() {
+   function DataResponse() {
 	// this function listens out for the server to say that the data is ready - i.e. has state 4
 	if (client.readyState == 4) {
 		// once the data is ready, process the data
-		var earthquakedata = client.responseText;
-		loadEarthquakelayer(earthquakedata);
+		var questiondata = client.responseText;
+		loadDataLayer(questiondata);
 		}
    }
-   // convert the received data - which is text - to JSON format and add it to the map
-   function loadEarthquakelayer(earthquakedata) {
-	// convert the text to JSON
-	var earthquakejson = JSON.parse(earthquakedata);
-	// add the JSON layer onto the map - it will appear using the default icons
-	earthquakelayer = L.geoJson(earthquakejson).addTo(mymap);
+   // convert text to JSON and add to the map
+   function loadDataLayer(questiondata) {
+	// text to JSON
+	var Datajson = JSON.parse(questiondata);
+	// add JSON layer to map
+	DataLayer = L.geoJson(Datajson).addTo(mymap);
 	// change the map zoom so that all the data is shown
-	mymap.fitBounds(earthquakelayer.getBounds());
+	mymap.fitBounds(DataLayer.getBounds());
 	}
