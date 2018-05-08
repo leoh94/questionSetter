@@ -1,6 +1,6 @@
 // the variables
 // and a variable that will hold the layer itself – we need to do this outside the function so that we can use it to remove the layer later on 
-var earthquakelayer;
+var loadData;
 // a global variable to hold the http request
 var client;
 // store the map
